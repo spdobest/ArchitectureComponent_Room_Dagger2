@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".room.RoomActivity" />
+        <activity android:name=".architectureComponent.ArchitectureComponentActivityActivity" />
+        <activity android:name=".dagger2.Dagger2Activity"></activity>
     </application>
 
 </manifest>
