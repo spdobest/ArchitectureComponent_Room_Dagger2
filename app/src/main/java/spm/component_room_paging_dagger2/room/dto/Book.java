@@ -5,9 +5,9 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(entity = UserDto.class,
+/*@Entity(foreignKeys = @ForeignKey(entity = UserModel.class,
                                   parentColumns = "uid",
-                                  childColumns = "user_id"))
+                                  childColumns = "user_id"))*/
 public class Book {
     @PrimaryKey
     public int bookId;

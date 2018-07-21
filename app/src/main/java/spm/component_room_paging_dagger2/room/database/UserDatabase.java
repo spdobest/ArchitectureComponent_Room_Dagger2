@@ -5,9 +5,10 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import spm.component_room_paging_dagger2.room.dto.UserDto;
+import spm.component_room_paging_dagger2.room.dao.MyDao;
+import spm.component_room_paging_dagger2.room.dto.UserModel;
 
-@Database(entities = {UserDto.class}, version = 1)
+@Database(entities = {UserModel.class}, version = 1)
 public abstract class UserDatabase extends RoomDatabase {
 
     private static UserDatabase noteDB;
@@ -26,7 +27,7 @@ public abstract class UserDatabase extends RoomDatabase {
                 .allowMainThreadQueries().build();
     }
 
-    public abstract UserDto getUserDao();
+    public abstract MyDao getUserDao();
 
     public void cleanUp() {
         noteDB = null;

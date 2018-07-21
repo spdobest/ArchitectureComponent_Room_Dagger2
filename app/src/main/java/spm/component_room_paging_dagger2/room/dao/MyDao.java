@@ -7,9 +7,10 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import spm.component_room_paging_dagger2.room.dto.UserDto;
+import spm.component_room_paging_dagger2.room.dto.UserModel;
 
 @Dao
 public interface MyDao {
@@ -19,43 +20,43 @@ public interface MyDao {
      */
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertUsers(UserDto... users);
+    public void insertUsers(UserModel... users);
 
     @Insert
-    public void insertBothUsers(UserDto user1, UserDto user2);
+    public void insertBothUsers(UserModel user1, UserModel user2);
 
     @Insert
-    public void insertUsersAndFriends(UserDto user, List<UserDto> friends);
+    public void insertUsersAndFriends(UserModel user, List<UserModel> friends);
 
     /**
      * QUERY
     */
     @Query("SELECT * FROM user WHERE age BETWEEN :minAge AND :maxAge")
-    public List<UserDto> loadAllUsersBetweenAges(int minAge, int maxAge);
+    public List<UserModel> loadAllUsersBetweenAges(int minAge, int maxAge);
 
     @Query("SELECT * FROM user WHERE first_name LIKE :search "
            + "OR last_name LIKE :search")
-    public List<UserDto> findUserWithName(String search);
+    public List<UserModel> findUserWithName(String search);
 
     @Query("SELECT * FROM user WHERE age > :minAge")
-    public List<UserDto> loadAllUsersOlderThan(int minAge);
+    public List<UserModel> loadAllUsersOlderThan(int minAge);
 
     @Query("SELECT * FROM user")
-    public List<UserDto> loadAllUsers();
+    public List<UserModel> loadAllUsers();
 
-    @Query("SELECT first_name, last_name FROM user")
-    public List<UserDto> loadFullName();
+//    @Query("SELECT first_name, last_name FROM user")
+//    public List<UserModel> loadFullName();
 
     /**
      * DELETE
      */
 
     @Delete
-    public void deleteUsers(UserDto... users);
+    public void deleteUsers(UserModel... users);
 
     /**
      * UPDATE
      */
     @Update
-    public void updateUsers(UserDto... users);
+    public void updateUsers(UserModel... users);
 }

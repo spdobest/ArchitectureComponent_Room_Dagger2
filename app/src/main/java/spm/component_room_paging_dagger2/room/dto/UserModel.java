@@ -1,28 +1,19 @@
 package spm.component_room_paging_dagger2.room.dto;
 
 import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 /**
- * Created by root on 7/17/18.
+ * Created by root on 7/21/18.
  */
 
-
-
-@Entity(tableName = "user",indices={@Index(value="firstName", unique=true),@Index(value="mobileNumber", unique=true)})
-//@Entity(primaryKeys = {"firstName", "lastName"},tableName = "Sibaprasad")
-
-// @Entity(indices = {@Index("name"),@Index(value = {"last_name", "address"})})
-
-// @Entity(indices = {@Index(value = {"first_name", "last_name"}, unique = true)})
-
-// @Entity(tableName = "users")
-public class UserDto {
+@Entity(tableName = "user")
+public class UserModel {
 
     /**
      * how to declare primary key in room database
@@ -31,37 +22,34 @@ public class UserDto {
      */
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "uid")
-    int uid;
+    public int uid;
 
 
     /**
      * you may or may not define ColumnInfo
      * if you define - It will save the data in table in the Given Column
      * If you not define - it will take the variable name
-      */
+     */
 
-    @ColumnInfo(name = "firstName")
-    String fName;
+    @ColumnInfo(name = "first_name")
+    public String fName;
 
-    @ColumnInfo(name = "lastName")
-    String lName;
+    @ColumnInfo(name = "last_name")
+    public String lName;
 
-    String mobileNumber;
+    public String mobileNumber;
 
-    int age;
+    public int age;
 
-    @NonNull
-    String pinCode;
+    @ColumnInfo(name = "pinCode")
+    public String pinCode;
 
+    @Embedded
+    public Address address;
     /**
      * if u define any variable as Ignore , it will not
      */
     @Ignore
     boolean isChecked;
 
-    @Embedded
-    public Address address;
-
 }
-
-

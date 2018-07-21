@@ -44,64 +44,99 @@
 
     </android.support.v7.widget.CardView>
 
+
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/edittextFirstName"
-        android:layout_width="wrap_content"
+        android:layout_width="196dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="232dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginRight="10dp"
+        android:maxLines="1"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:hint="First Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/edittextLastName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="1"
         android:hint="Last Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/edittextFirstName"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
 
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/edittextAge"
-        android:layout_width="match_parent"
+        android:layout_width="190dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittextLastName"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Age"
-        />
-
+        android:inputType="number"
+        android:maxLines="1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittextFirstName" />
 
 
     <android.support.v7.widget.AppCompatEditText
         android:id="@+id/edittextMobileNumber"
-        android:layout_width="match_parent"
+        android:layout_width="177dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
+        android:hint="MobileNumber"
+        android:inputType="number"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittextAge"
-        android:hint="MobileNumber"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/edittextFirstName" />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edittextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:hint="Address"
+        android:maxLines="3"
+        android:gravity="start|left|top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittextAge" />
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/buttonSubmitUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittextAddress" />
+
 
 
 </android.support.constraint.ConstraintLayout>
