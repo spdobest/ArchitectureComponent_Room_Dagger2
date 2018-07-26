@@ -70,7 +70,7 @@ public class PaginationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     @NonNull
     private RecyclerView.ViewHolder getViewHolder(ViewGroup parent, LayoutInflater inflater) {
         RecyclerView.ViewHolder viewHolder;
-        View v1 = inflater.inflate(R.layout.item_paging, parent, false);
+        View v1 = inflater.inflate(R.layout.itemview_paging, parent, false);
         viewHolder = new MovieVH(v1);
         return viewHolder;
     }
