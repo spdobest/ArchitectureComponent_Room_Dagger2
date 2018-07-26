@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Component_Room_Paging_Dagger2</string>
+    <string name="url">https://api.themoviedb.org/3/movie/550?api_key=b7eb389e9e6ad5e434077e4b6d83ad78</string>
 </resources>
